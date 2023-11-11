@@ -1,10 +1,17 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableWithoutFeedback, Button, Alert } from 'react-native';
 
 export default function App() {
+  const handlePress = () => {
+    console.log("Texted pressed");
+  }
+  
   return (
     <View style={styles.container}>
-      <Text>Typescript Android App!</Text>
+      <Button title="Click me" onPress={() => Alert.alert("Title", "Message",
+      [{text: "Yes", onPress: () => alert("Pressed yes")}, 
+      {text:"No", onPress: () => alert("Pressed no")}])}></Button>
+
       <StatusBar style="auto" />
     </View>
   );
@@ -13,7 +20,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: 'pink',
     alignItems: 'center',
     justifyContent: 'center',
   },
